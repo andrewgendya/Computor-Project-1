@@ -1,7 +1,9 @@
-# simpson function implementation - Lokaghna
 import numpy as np
-def trapezoidal(x_vals: np.ndarray, func: np.ufunc):
-    print("Hello")
+# simpson function implementation - Lokaghna
+def trapezoidal(x_vals: np.ndarray, func: np.ufunc)->float:
+    integral=np.diff(x_vals)
+    return np.sum(((func(x_vals[:-1]))+(func(x_vals[1:])))/2*integral)
+
 
 # simpson function implementation - Lokaghna
 def simpson(x_vals: np.ndarray, func: np.ufunc):
