@@ -1,4 +1,10 @@
 import numpy as np
+
+# Left endpoint function - Andrew
+def left_endpoint(x_vals: np.ndarray, func: np.ufunc):
+    dx: np.diff(x_vals)
+    return np.sum(func(x_vals[:-1]*dx))
+
 # simpson function implementation - Lokaghna
 def trapezoidal(x_vals: np.ndarray, func: np.ufunc)->float:
     integral=np.diff(x_vals)
@@ -12,7 +18,3 @@ def simpson(x_vals: np.ndarray, func: np.ufunc):
     approx = ((b-a)/6)(func(a)+4*func((a+b)/2)+func(b))
     return approx
 
-
-def left_endpoint(x_vals: np.ndarray, func: np.ufunc):
-    dx: np.diff(x_vals)
-    return np.sum(func(x_vals[:-1]*dx))
