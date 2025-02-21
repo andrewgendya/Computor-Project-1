@@ -12,8 +12,13 @@ def get_barycentric_coordinates(triangle_coordinates, point_coordinates):
     run3=1-run1-run2
     return np.array([run1,run2,run3])
 # get_Caretsian_coordinates implementation - Devadarshini
-def get_cartesian_coordinates:
-
+ def get_cartesian_coordinates(triangle_coordinates, barycentric_coordinates):
+    triangle_coordinates[0] = ("x1", "x2", "x3")
+    triangle_coordinates[1] = ("y1", "y2", "y3")
+    triangle_coordinates = np.array(triangle_coordinates)
+    barycentric_coordinates = 1, 2, 3
+    barycentric_coordinates = np.array(barycentric_coordinates)
+    return np.dot(triangle_coordinates, barycentric_coordinates)
 # is_inside_triangle implementation - Lokaghna
 def is_inside_triangle:
     return
